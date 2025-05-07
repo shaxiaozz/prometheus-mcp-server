@@ -64,12 +64,10 @@ var (
 			mcp.Required()),
 		mcp.WithString("step",
 			mcp.Description("Query resolution step width in duration format or float number of seconds. (e.g., '15s', '1m', '1h')"),
-			mcp.DefaultString("15s"),
-			mcp.Required()),
+			mcp.DefaultString("15s")),
 		mcp.WithString("timeout",
 			mcp.Description("Evaluation timeout."),
-			mcp.DefaultString("15s"),
-			mcp.Required()),
+			mcp.DefaultString("15s")),
 	)
 )
 
@@ -82,7 +80,7 @@ func ListMetricsToolHandle(ctx context.Context, request mcp.CallToolRequest) (*m
 		return nil, errors.New(errorMsg)
 	}
 	logger.Info("Call PrometheusListMetricsToolHandle data: ")
-	fmt.Println(string(data))
+	//fmt.Println(string(data))
 	return mcp.NewToolResultText(string(data)), nil
 }
 
@@ -95,7 +93,7 @@ func GetTargetsToolHandle(ctx context.Context, request mcp.CallToolRequest) (*mc
 		return nil, errors.New(errorMsg)
 	}
 	logger.Info("Call GetTargetsToolHandle data: ")
-	fmt.Println(string(data))
+	//fmt.Println(string(data))
 	return mcp.NewToolResultText(string(data)), nil
 }
 
